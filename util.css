@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-image: url("./ziek.jpg") !important;
-    background-repeat: repeat !important;
-    background-size: 50%;
-    animation: goof 5s linear 2s infinite alternate !important;
-}
-
-@keyframes goof {
-    from {
-        background-position: 0% !important;
-    }
-    to {
-        background-position: 100% !important;
-    }
-}
-
 html {
     @apply font-sans;
 }
@@ -32,16 +16,43 @@ body {
 
 .title {
     @apply block text-zinc-200 mt-10 font-bold text-7xl text-center;
+    animation: coolassintro 2s forwards;
 }
 
 .goofyform {
-    @apply flex rounded p-3 mx-auto mt-3 w-2/4;
+    @apply flex rounded p-3 mx-auto mt-3 w-2/4 opacity-0;
+    animation: coolassintro 2s 1s forwards;
 }
 
 .goofyform input {
-    @apply block p-3 border-2 rounded rounded-r-none shadow-xl w-full text-2xl bg-transparent font-semibold text-white;
+    @apply block p-3 border-2 rounded rounded-r-none shadow-xl w-full text-2xl bg-transparent font-semibold text-white placeholder:text-white;
 }
 
 .goofyform button {
     @apply block p-3 rounded rounded-l-none bg-zinc-100 text-red-950 font-bold text-xl w-20;
+}
+
+#goofygif{
+    @apply block mx-auto rounded-lg shadow-2xl shadow-blue-950 my-2 opacity-0;
+    animation: rotater 4s linear infinite, coolassintro 2s 0.5s forwards;
+}
+
+@keyframes rotater {
+    from {
+        transform: perspective(1000px) rotateX(0deg) rotateY(0deg);;
+    }
+    to {
+        transform: perspective(1000px) rotateX(360deg) rotateY(360deg);
+
+    }
+}
+
+@keyframes coolassintro {
+    from {
+        @apply opacity-0;
+        transform: translateY(-10rem);
+    } 
+    to {
+        @apply opacity-100;
+    }
 }

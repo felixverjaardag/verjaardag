@@ -563,6 +563,11 @@ video {
   margin-right: auto;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -583,12 +588,24 @@ video {
   height: 100%;
 }
 
+.w-2\/4 {
+  width: 50%;
+}
+
 .w-full {
   width: 100%;
 }
 
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rounded {
   border-radius: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .rounded-l-none {
@@ -668,9 +685,20 @@ video {
   color: rgb(69 10 10 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .text-zinc-200 {
   --tw-text-opacity: 1;
   color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-xl {
@@ -679,21 +707,9 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-body {
-  background-image: url("./ziek.jpg") !important;
-  background-repeat: repeat !important;
-  background-size: 50%;
-  animation: goof 5s linear 2s infinite alternate !important;
-}
-
-@keyframes goof {
-  from {
-    background-position: 0% !important;
-  }
-
-  to {
-    background-position: 100% !important;
-  }
+.shadow-blue-950 {
+  --tw-shadow-color: #172554;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 html {
@@ -726,6 +742,7 @@ body {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(228 228 231 / var(--tw-text-opacity));
+  animation: coolassintro 2s forwards;
 }
 
 .goofyform {
@@ -736,6 +753,8 @@ body {
   width: 50%;
   border-radius: 0.25rem;
   padding: 0.75rem;
+  opacity: 0;
+  animation: coolassintro 2s 1s forwards;
 }
 
 .goofyform input {
@@ -757,6 +776,16 @@ body {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.goofyform input::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.goofyform input::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .goofyform button {
   display: block;
   width: 5rem;
@@ -771,4 +800,41 @@ body {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(69 10 10 / var(--tw-text-opacity));
+}
+
+#goofygif {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  border-radius: 0.5rem;
+  opacity: 0;
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: #172554;
+  --tw-shadow: var(--tw-shadow-colored);
+  animation: rotater 4s linear infinite, coolassintro 2s 0.5s forwards;
+}
+
+@keyframes rotater {
+  from {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: perspective(1000px) rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes coolassintro {
+  from {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+
+  to {
+    opacity: 1;
+  }
 }
