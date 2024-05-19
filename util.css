@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-image: url("./ziek.jpg") !important;
+    background-repeat: repeat !important;
+    background-size: 50%;
+    animation: goof 5s linear 2s infinite alternate !important;
+}
+
+@keyframes goof {
+    from {
+        background-position: 0% !important;
+    }
+    to {
+        background-position: 100% !important;
+    }
+}
+
+html {
+    @apply font-sans;
+}
+
+html, body {
+    @apply h-full m-0 p-0 overflow-auto;
+}
+
+body {
+    @apply bg-no-repeat bg-gradient-to-bl from-green-950 to-green-600 h-full;
+}
+
+.title {
+    @apply block text-zinc-200 mt-10 font-bold text-7xl text-center;
+}
+
+.goofyform {
+    @apply flex rounded p-3 mx-auto mt-3 w-2/4;
+}
+
+.goofyform input {
+    @apply block p-3 border-2 rounded rounded-r-none shadow-xl w-full text-2xl bg-transparent font-semibold text-white;
+}
+
+.goofyform button {
+    @apply block p-3 rounded rounded-l-none bg-zinc-100 text-red-950 font-bold text-xl w-20;
+}
