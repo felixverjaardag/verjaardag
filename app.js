@@ -12,8 +12,8 @@ password.onkeydown = (e) => {
 }
 
 function verify(){
-    if (password.value === "nigga"){
-        alert("RWVMG-9M8J4-JD493\nGENIET VAN JE 20 EURO STEAM WALLET CASH NIGGA")
+    if (password.value === "balls"){
+        alert("te laaat")
     } else {
         alert("PROBEER OPNIEUW HOMEBOY")
     }

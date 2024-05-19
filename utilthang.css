@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply font-sans;
+}
+
+html, body {
+    @apply h-full m-0 p-0 overflow-auto;
+}
+
+body {
+    @apply flex items-center origin-center content-center justify-center bg-zinc-950 h-full;
+}
+
+#go{
+    @apply block p-5 rounded-lg font-bold bg-zinc-100 text-zinc-900 text-2xl;
+}
+
+video {
+    @apply block w-7/12 shadow-2xl shadow-purple-950/40 rounded-xl;
+    animation: intro linear 20s forwards;
+}
+
+@keyframes intro {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 100%;
+        transform: scale(1.1);
+    }
+}
